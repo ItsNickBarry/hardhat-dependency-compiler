@@ -1,0 +1,31 @@
+{
+  "name": "hardhat-dependency-compiler",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Compile Solidity sources directly from NPM dependencies",
+  "keywords": [
+    "hardhat",
+    "buidler",
+    "solidity",
+    "solc",
+    "npm",
+    "yarn",
+    "dependency",
+    "dependencies",
+    "smart-contracts",
+    "ethereum",
+    "blockchain",
+    "wow"
+  ],
+  "repository": "https://github.com/ItsNickBarry/hardhat-dependency-compiler",
+  "author": "Nick Barry",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "peerDependencies": {
+    "hardhat": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "hardhat": "^2.0.0"
+  }
+}
