@@ -27,5 +27,8 @@
   "devDependencies": {
     "eslint": "^7.0.0",
     "hardhat": "^2.0.0"
+  },
+  "dependencies": {
+    "rimraf": "^3.0.2"
   }
 }
