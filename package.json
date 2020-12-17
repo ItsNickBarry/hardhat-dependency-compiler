@@ -1,6 +1,6 @@
 {
   "name": "hardhat-dependency-compiler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "description": "Compile Solidity sources directly from NPM dependencies",
   "keywords": [
@@ -27,5 +27,8 @@
   "devDependencies": {
     "eslint": "^7.0.0",
     "hardhat": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=12.10.0"
   }
 }
