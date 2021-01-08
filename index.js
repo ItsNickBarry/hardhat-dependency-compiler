@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const { extendConfig } = require('hardhat/config');
 
+const { HardhatPluginError } = require('hardhat/plugins');
+
 const {
   TASK_COMPILE,
 } = require('hardhat/builtin-tasks/task-names');
@@ -27,7 +29,7 @@ task(TASK_COMPILE, async function (args, hre, runSuper) {
   const directory = `${ hre.config.paths.sources }/_hardhat-dependency-compiler`;
 
   if (fs.existsSync(directory)) {
-    throw 'hardhat-dependency-compiler: temporary source directory must not exist';
+    throw new HardhatPluginError('temporary source directory must not exist');
   }
 
   fs.mkdirSync(directory);
