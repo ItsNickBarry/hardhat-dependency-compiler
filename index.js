@@ -19,11 +19,11 @@ extendConfig(function (config, userConfig) {
 });
 
 const generate = function (dependency) {
-  return `
-  // SPDX-License-Identifier: UNLICENSED
-  pragma solidity *;
-  import '${ dependency }';
-  `;
+  return [
+    '// SPDX-License-Identifier: UNLICENSED',
+    'pragma solidity *;',
+    `import '${ dependency }';`,
+  ].map(l => `${ l }\n`).join('');
 };
 
 task(TASK_COMPILE, async function (args, hre, runSuper) {
