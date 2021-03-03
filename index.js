@@ -4,6 +4,8 @@ const { extendConfig } = require('hardhat/config');
 
 const { HardhatPluginError } = require('hardhat/plugins');
 
+const { name } = require('./package.json');
+
 const {
   TASK_COMPILE,
 } = require('hardhat/builtin-tasks/task-names');
@@ -12,6 +14,7 @@ extendConfig(function (config, userConfig) {
   config.dependencyCompiler = Object.assign(
     {
       paths: [],
+      path: `./${ name }`,
       keep: false,
     },
     userConfig.dependencyCompiler
@@ -28,10 +31,17 @@ const generate = function (dependency) {
 
 task(TASK_COMPILE, async function (args, hre, runSuper) {
   const config = hre.config.dependencyCompiler;
-  const { name } = require('./package.json');
 
-  const directory = path.resolve(hre.config.paths.sources, name);
+  const directory = path.resolve(hre.config.paths.sources, config.path);
   const tracker = path.resolve(directory, `.${ name }`);
+
+  if (!directory.startsWith(hre.config.paths.sources)) {
+    throw new HardhatPluginError('resolved path must be inside of sources directory');
+  }
+
+  if (directory === hre.config.paths.sources) {
+    throw new HardhatPluginError('resolved path must not be sources directory');
+  }
 
   if (fs.existsSync(directory)) {
     if (fs.existsSync(tracker)) {
