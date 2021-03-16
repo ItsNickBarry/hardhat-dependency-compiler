@@ -24,7 +24,7 @@ extendConfig(function (config, userConfig) {
 const generate = function (dependency) {
   return [
     '// SPDX-License-Identifier: UNLICENSED',
-    'pragma solidity *;',
+    'pragma solidity >0.0.0;',
     `import '${ dependency }';`,
   ].map(l => `${ l }\n`).join('');
 };
