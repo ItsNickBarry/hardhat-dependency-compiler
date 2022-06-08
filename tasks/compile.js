@@ -6,7 +6,7 @@ const {
   TASK_COMPILE,
 } = require('hardhat/builtin-tasks/task-names');
 
-const { name } = require('./package.json');
+const { name } = require('../package.json');
 
 const generate = function (dependency) {
   return [
