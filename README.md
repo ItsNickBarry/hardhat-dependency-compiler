@@ -5,6 +5,8 @@ Compile Solidity sources directly from NPM dependencies.
 ## Installation
 
 ```bash
+npm install --save-dev hardhat-dependency-compiler
+# or
 yarn add --dev hardhat-dependency-compiler
 ```
 
