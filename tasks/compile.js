@@ -31,6 +31,7 @@ task(TASK_COMPILE, async function (args, hre, runSuper) {
   }
 
   if (fs.existsSync(directory)) {
+    // delete directory only if tracker is found or directory is empty
     if (fs.existsSync(tracker) || fs.readdirSync(directory).length == 0) {
       fs.rmSync(directory, { recursive: true });
     } else {
