@@ -2,12 +2,14 @@
 
 Compile Solidity sources directly from NPM dependencies.
 
+> Versions of this plugin prior to `2.0.0` were released as `hardhat-dependency-compiler`, outside of the `@solidstate` namespace.
+
 ## Installation
 
 ```bash
-npm install --save-dev hardhat-dependency-compiler
+npm install --save-dev @solidstate/hardhat-dependency-compiler
 # or
-yarn add --dev hardhat-dependency-compiler
+yarn add --dev @solidstate/hardhat-dependency-compiler
 ```
 
 ## Usage
@@ -15,7 +17,7 @@ yarn add --dev hardhat-dependency-compiler
 Load plugin in Hardhat config:
 
 ```javascript
-require('hardhat-dependency-compiler');
+require('@solidstate/hardhat-dependency-compiler');
 ```
 
 Add configuration under the `dependencyCompiler` key:
