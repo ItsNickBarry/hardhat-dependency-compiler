@@ -49,7 +49,14 @@ task(TASK_COMPILE, async function (args, hre, runSuper) {
       fs.mkdirSync(path.dirname(fullPath), { recursive: true });
     }
 
-    fs.writeFileSync(fullPath, generate(dependency));
+    let code;
+    if (dependency.search(/\.vy$/) !== -1) {
+      code = fs.readFileSync(dependency);
+    } else {
+      code = generate(dependency);
+    }
+
+    fs.writeFileSync(fullPath, code);
   }
 
   try {
