@@ -20,14 +20,17 @@ const generate = function (dependency) {
 task(TASK_COMPILE, async function (args, hre, runSuper) {
   const config = hre.config.dependencyCompiler;
 
-  const directory = path.resolve(hre.config.paths.sources, config.path);
+  // sources path must be "resolved" for compatibility with @nomicfoundation/hardhat-foundry package
+  const sources = path.resolve(hre.config.paths.sources);
+
+  const directory = path.resolve(sources, config.path);
   const tracker = path.resolve(directory, `.${ name }`);
 
-  if (!directory.startsWith(hre.config.paths.sources)) {
+  if (!directory.startsWith(sources)) {
     throw new HardhatPluginError(PLUGIN_NAME, 'resolved path must be inside of sources directory');
   }
 
-  if (directory === hre.config.paths.sources) {
+  if (directory === sources) {
     throw new HardhatPluginError(PLUGIN_NAME, 'resolved path must not be sources directory');
   }
 
