@@ -20,7 +20,7 @@ const generate = function (dependency) {
 task(TASK_COMPILE, async function (args, hre, runSuper) {
   const config = hre.config.dependencyCompiler;
 
-  // sources path must be "resolved" for compatibility with @nomicfoundation/hardhat-foundry package
+  // other packages may incorrectly set a relative sources path so it must be explicitly resolved
   const sources = path.resolve(hre.config.paths.sources);
 
   const directory = path.resolve(sources, config.path);
