@@ -29,7 +29,7 @@ Add configuration under the `dependencyCompiler` key:
 ```javascript
 dependencyCompiler: {
   paths: [
-    '@openzeppelin/contracts/token/ERC20/IERC20.sol',
+    '@solidstate/contracts/interfaces/IERC20.sol',
   ],
 }
 ```
