@@ -19,21 +19,33 @@
   ],
   "repository": "https://github.com/ItsNickBarry/hardhat-dependency-compiler",
   "author": "Nick Barry",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "scripts": {
+    "build": "tsc --build",
     "prepare": "husky",
     "prettier": "prettier --write ."
   },
+  "files": [
+    "dist/src/",
+    "src/"
+  ],
   "peerDependencies": {
     "hardhat": "^2.0.0"
   },
   "devDependencies": {
+    "@solidstate/contracts": "^0.0.59",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "hardhat": "^2.0.0",
+    "@types/chai": "^4.3.16",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.14.6",
+    "chai": "^4.4.1",
+    "hardhat": "^2.22.5",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
-    "prettier": "^3.3.2"
+    "prettier": "^3.3.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
   },
   "engines": {
     "node": ">=14.14.0"
