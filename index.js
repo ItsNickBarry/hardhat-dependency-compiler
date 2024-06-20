@@ -8,9 +8,9 @@ extendConfig(function (config, userConfig) {
   config.dependencyCompiler = Object.assign(
     {
       paths: [],
-      path: `./${ name }`,
+      path: `./${name}`,
       keep: false,
     },
-    userConfig.dependencyCompiler
+    userConfig.dependencyCompiler,
   );
 });
