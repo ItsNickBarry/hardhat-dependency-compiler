@@ -24,6 +24,10 @@ task(TASK_COMPILE, async function (args, hre, runSuper) {
   const directory = path.resolve(sources, config.path);
   const tracker = path.resolve(directory, `.${pluginName}`);
 
+  if (!fs.existsSync(sources)) {
+    fs.mkdirSync(sources);
+  }
+
   if (!directory.startsWith(sources)) {
     throw new HardhatPluginError(
       pluginName,
