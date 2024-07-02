@@ -5,7 +5,7 @@ import { task } from 'hardhat/config';
 import { HardhatPluginError } from 'hardhat/plugins';
 import path from 'path';
 
-const generate = function (dependency: string) {
+const generate = (dependency: string) => {
   return [
     '// SPDX-License-Identifier: UNLICENSED',
     'pragma solidity >0.0.0;',
@@ -15,7 +15,7 @@ const generate = function (dependency: string) {
     .join('');
 };
 
-task(TASK_COMPILE, async function (args, hre, runSuper) {
+task(TASK_COMPILE, async (args, hre, runSuper) => {
   const config = hre.config.dependencyCompiler;
 
   // other packages may incorrectly set a relative sources path so it must be explicitly resolved
