@@ -2,6 +2,8 @@
 
 Compile Solidity sources directly from NPM dependencies.
 
+> This plugin was built for Hardhat 2 and is no longer maintained.  Its features have been incorporated directly into Hardhat 3.
+
 ## Installation
 
 ```bash
